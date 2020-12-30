@@ -65,7 +65,7 @@ module.exports = {
         url: 'https://api-xrp.bitcore.io'
       }
     },
-    socketApiKey: 'socketApiKey'
+    socketApiKey: '31323334353637383930'
   },
   pushNotificationsOpts: {
     templatePath: 'templates',
