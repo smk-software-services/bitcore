@@ -5,7 +5,7 @@ WORKDIR /bitcore
 COPY  ./packages/bitcore-wallet-service/package.json ./packages/bitcore-wallet-service/package.json
 COPY  ./packages/bitcore-wallet-service/package-lock.json ./packages/bitcore-wallet-service/package-lock.json
 
-WORKDIR /packages/bitcore-wallet-service
+WORKDIR /bitcore/packages/bitcore-wallet-service
 
 RUN npm install
 
@@ -22,7 +22,7 @@ ENV NODE_ENV=${NODE_ENV}
 
 EXPOSE 3232
 
-WORKDIR /packages/bitcore-wallet-service
+WORKDIR /bitcore/packages/bitcore-wallet-service
 
 CMD ["npm", "start"]
 # ENTRYPOINT ["sh", "./entrypoint.sh" ]
