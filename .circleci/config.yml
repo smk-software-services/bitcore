@@ -43,7 +43,6 @@ workflows:
                 - staging
                 - master
       - aws-ecr/build_and_push_image:
-          working_directory: ~/bitcore/packages/bitcore-wallet-service
           requires:
             - install_deps_and_test
           region: DEV_AWS_REGION
@@ -60,7 +59,6 @@ workflows:
               only:
                 - master
       - aws-ecs/deploy-service-update:
-          working_directory: ~/bitcore/packages/bitcore-wallet-service
           requires:
             - aws-ecr/build_and_push_image
           aws-region: ${DEV_AWS_REGION}
