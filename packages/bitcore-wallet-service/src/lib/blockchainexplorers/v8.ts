@@ -519,6 +519,8 @@ export class V8 {
 
       const authKeyObj = new Bitcore.PrivateKey(authKey);
       const pubKey = authKeyObj.toPublicKey().toString();
+      logger.info('Public Key:' + pubKey);
+
       const authClient = new Client({ baseUrl: host, authKey: authKeyObj });
       const payload = { method: 'socket', url: host };
       const authPayload = { pubKey, message: authClient.getMessage(payload), signature: authClient.sign(payload) };
@@ -526,12 +528,12 @@ export class V8 {
     };
 
     blockSocket.on('connect', () => {
-      logger.info(`Connected to block ${this.getConnectionInfo()}`);
+      logger.info(`blockSocket - Connected to block ${this.getConnectionInfo()}`);
       blockSocket.emit('room', `/${this.chain}/${this.v8network}/inv`);
     });
 
     blockSocket.on('connect_error', () => {
-      logger.error(`Error connecting to ${this.getConnectionInfo()}`);
+      logger.error(`blockSocket - Error connecting to ${this.getConnectionInfo()}`);
     });
 
     blockSocket.on('block', data => {
@@ -539,16 +541,16 @@ export class V8 {
     });
 
     walletsSocket.on('connect', () => {
-      logger.info(`Connected to wallets ${this.getConnectionInfo()}`);
+      logger.info(`walletsSocket - Connected to wallets ${this.getConnectionInfo()}`);
       walletsSocket.emit('room', `/${this.chain}/${this.v8network}/wallets`, getAuthPayload(this.host));
     });
 
     walletsSocket.on('connect_error', () => {
-      logger.error(`Error connecting to ${this.getConnectionInfo()}  ${this.chain}/${this.v8network}`);
+      logger.error(`walletsSocket - Error connecting to ${this.getConnectionInfo()}  ${this.chain}/${this.v8network}`);
     });
 
     walletsSocket.on('failure', err => {
-      logger.error(`Error joining room ${err.message} ${this.chain}/${this.v8network}`);
+      logger.error(`walletsSocket - Error joining room ${err.message} ${this.chain}/${this.v8network}`);
     });
 
     walletsSocket.on('coin', data => {
