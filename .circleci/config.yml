@@ -29,9 +29,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: cd packages/bitcore-wallet-service/ && npm install
-      - run:
-          name: Run Test
-          command: cd packages/bitcore-wallet-service/ && npm run test:ci
+      # - run:
+      #     name: Run Test
+      #     command: cd packages/bitcore-wallet-service/ && npm run test:ci
 
 workflows:
   build_test_deploy:
