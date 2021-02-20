@@ -18,4 +18,4 @@ ENV NODE_ENV=${NODE_ENV}
 
 EXPOSE 3232
 
-CMD ["npm", "start"]
+ENTRYPOINT ["sh", "./entrypoint.sh" ]
