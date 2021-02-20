@@ -7,7 +7,7 @@ if (fs.existsSync(".env")) {
 }
 
 module.exports = {
-  basePath: '/bws/api',
+  basePath: '/api',
   disableLogs: false,
   port: 3232,
 
@@ -46,7 +46,6 @@ module.exports = {
       },
       testnet: {
         url: 'https://api.bitcore.io'
-        regtestEnabled: false
       }
     },
     // bch: {
