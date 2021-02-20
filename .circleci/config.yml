@@ -46,6 +46,8 @@ workflows:
                 - staging
                 - master
       - aws-ecr/build_and_push_image:
+          requires:
+            - install_deps_and_test
           region: DEV_AWS_REGION
           account-url: DEV_AWS_ECR_ACCOUNT_URL
           aws-access-key-id: DEV_AWS_ACCESS_KEY_ID
