@@ -1,0 +1,21 @@
+FROM node:10.23.1
+
+WORKDIR ~/bitcore/packages/bitcore-wallet-service/
+
+ADD package.json ./
+
+RUN npm install
+
+ADD . .
+
+ARG SENDGRID_API_KEY
+ENV SENDGRID_API_KEY=${SENDGRID_API_KEY}
+ARG SENDGRID_API_KEY
+ENV DB_CONNECTION=${DB_CONNECTION}
+ARG SENDGRID_API_KEY
+ENV NODE_ENV=${NODE_ENV}
+
+
+EXPOSE 3232
+
+CMD ["npm", "start"]
