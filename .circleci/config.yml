@@ -65,7 +65,7 @@ workflows:
           aws-access-key-id: ${DEV_AWS_ACCESS_KEY_ID}
           aws-secret-access-key: ${DEV_AWS_SECRET_ACCESS_KEY}
           family: "${DEV_AWS_RESOURCE_NAME_PREFIX}-task"
-          service-name: "${DEV_AWS_RESOURCE_NAME_PREFIX}-service"
+          service-name: "${DEV_AWS_RESOURCE_NAME_PREFIX}"
           cluster-name: "${DEV_AWS_RESOURCE_NAME_PREFIX}-cluster"
           container-image-name-updates: "container=${DEV_AWS_RESOURCE_NAME_PREFIX},tag=${CIRCLE_SHA1}"
           filters:
