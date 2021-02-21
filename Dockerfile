@@ -3,11 +3,9 @@ FROM node:10.23.1
 WORKDIR /bitcore
 
 COPY  ./packages/bitcore-wallet-service/package.json ./packages/bitcore-wallet-service/package.json
-# COPY  ./packages/bitcore-wallet-service/package-lock.json ./packages/bitcore-wallet-service/package-lock.json
+COPY  ./packages/bitcore-wallet-service/package-lock.json ./packages/bitcore-wallet-service/package-lock.json
 
 WORKDIR /bitcore/packages/bitcore-wallet-service
-
-RUN npm install -g pm2
 
 RUN npm install
 
