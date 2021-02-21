@@ -4,4 +4,4 @@
 npm start
 
 #run bws log
-tail -f logs/emailservice.log
+tail -f logs/bws.log

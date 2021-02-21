@@ -79,10 +79,10 @@
     "proxyquire": "^1.7.2",
     "sinon": "^7.1.1",
     "supertest": "*",
-    "ts-node": "^8.0.3",
+    "ts-node": "^9.0.0",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^15.0.0"
   },
   "scripts": {
     "start": "npm run clean && npm run tsc && ./start.sh",
