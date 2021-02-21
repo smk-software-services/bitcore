@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# # move to correct packge
-cd packages/bitcore-wallet-service
-
 # start application
 npm start
+
+#run bws log
+tail -f logs/emailservice.log

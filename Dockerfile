@@ -7,6 +7,8 @@ COPY  ./packages/bitcore-wallet-service/package-lock.json ./packages/bitcore-wal
 
 WORKDIR /bitcore/packages/bitcore-wallet-service
 
+RUN npm install -g pm2
+
 RUN npm install
 
 WORKDIR /bitcore
@@ -24,5 +26,5 @@ EXPOSE 3232
 
 WORKDIR /bitcore/packages/bitcore-wallet-service
 
-CMD ["npm", "start"]
-# ENTRYPOINT ["sh", "./entrypoint.sh" ]
+# CMD ["npm", "start"]
+ENTRYPOINT ["sh", "./entrypoint.sh" ]
